@@ -1,6 +1,6 @@
 /*
 
-/* PROBLEM NUMBER THREE :
+//* PROBLEM
 
 Given a square matrix, calculate the absolute difference between the sums of its diagonals.
 
@@ -18,8 +18,7 @@ int: the absolute diagonal difference
 
 */
 
-
-//* SOLVING PROBLEM NUMBER THREE
+//* SOLVING PROBLEM
 //* sample input.
 const arr = [
   [11, 2, 4],

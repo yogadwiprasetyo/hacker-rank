@@ -1,6 +1,6 @@
 /*
 
-//* PROBLEM NUMBER SIX :
+//* PROBLEM NUMBER 
 
 You are in charge of the cake for a child's birthday. You have decided the cake will have one candle for each year of their total age. They will only be able to blow out the tallest of the candles. Count how many candles are tallest.
 
@@ -18,11 +18,9 @@ int: the number of candles that are tallest
 
 */
 
-
-
-//* SOLVING PROBLEM NUMBER SIX
+//* SOLVING PROBLEM
 //* sample input.
-  const candles = [4, 4, 1, 3];
+const candles = [4, 4, 1, 3];
 
 /*
  * Complete the 'birthdayCakeCandles' function below.

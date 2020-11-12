@@ -1,6 +1,6 @@
 /*
 
-**PROBLEM NUMBER ONE** :
+//* PROBLEM
 
 Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.
 
@@ -18,7 +18,7 @@ Given a and b, determine their respective comparison points.
 
 */
 
-// * SOLVING PROBLEM NUMBER ONE
+// * SOLVING PROBLEM
 //* Sample input.
 const a = [17, 28, 30, 40];
 const b = [99, 16, 8, 40];
@@ -45,4 +45,3 @@ function compareTriplets(a, b) {
 
 //* Expected result: 2 1
 console.log(compareTriplets(a, b));
-
