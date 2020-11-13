@@ -24,11 +24,11 @@ int[n]: the grades after rounding as appropriate
 
 */
 
-// TODO: REFACTOR THIS PROBLEM SOLVING
 //* SOLVING PROBLEM
 
 //* sample input.
 const grades = [73, 67, 38, 33];
+// const grades = [70, 61, 83, 74];
 
 /*
  * Complete the 'gradingStudents' function below.
@@ -37,7 +37,7 @@ const grades = [73, 67, 38, 33];
  * The function accepts INTEGER_ARRAY grades as parameter.
  */
 function gradingStudents(grades) {
-  // initial variable.
+  //* initial variable.
   const finalGrade = [];
 
   for (let i = 0; i < grades.length; i++) {
@@ -47,48 +47,34 @@ function gradingStudents(grades) {
       continue;
     }
 
-    //* requirements return true or false.
-    let isTwoDigits = grades[i] >= 10;
-    let lastNumber = grades[i].toString();
+    //* change type grade to string and check is grade have two digits.
+    const isTwoDigits = grades[i] >= 10;
+    let gradeString = grades[i].toString();
 
-    //* if grade have two digits, get last string.
+    //* if grade have two digits, get last number grade.
     if (isTwoDigits) {
-      lastNumber = lastNumber[1];
+      gradeString = gradeString[1];
     }
 
-    //* logic business.
-    switch (lastNumber) {
-      case "0":
-        finalGrade.push(calculateGrades(grades[i], 5));
-        break;
-      case "1":
-        finalGrade.push(calculateGrades(grades[i], 4));
-        break;
-      case "2":
-        finalGrade.push(calculateGrades(grades[i], 3));
-        break;
-      case "3":
-        finalGrade.push(calculateGrades(grades[i], 2));
-        break;
-      case "4":
-        finalGrade.push(calculateGrades(grades[i], 1));
-        break;
-      case "5":
-        finalGrade.push(calculateGrades(grades[i], 5));
-        break;
-      case "6":
-        finalGrade.push(calculateGrades(grades[i], 4));
-        break;
-      case "7":
-        finalGrade.push(calculateGrades(grades[i], 3));
-        break;
-      case "8":
-        finalGrade.push(calculateGrades(grades[i], 2));
-        break;
-      case "9":
-        finalGrade.push(calculateGrades(grades[i], 1));
-        break;
+    //* change type grade, back to number.
+    //* check is last number grade is less than or equals four.
+    //* check is last number grade is more than four.
+    const lastNumberGrade = parseInt(gradeString);
+    const isLessOrEqualsFour = lastNumberGrade <= 4;
+    const isMoreThanFour = lastNumberGrade > 4;
+    let multipleToFive = 0;
+
+    //* if last number grade less than or equals four,
+    //* else if last number grade more than four.
+    //* get a value to make the grade point to a multiple of five.
+    if (isLessOrEqualsFour) {
+      multipleToFive = 5 - lastNumberGrade;
+    } else if (isMoreThanFour) {
+      multipleToFive = 10 - lastNumberGrade;
     }
+
+    //* push the result grades to array final grades.
+    finalGrade.push(calculateGrades(grades[i], multipleToFive));
   }
 
   //* return list final grade.
@@ -104,7 +90,7 @@ function calculateGrades(grade, multiple) {
   //* get the difference between the grade and the next multiple 5.
   const rounded = Math.abs(nextMultiple5 - grade);
 
-  //* if less than 3, return round grade up to the next multiple 5.
+  //* if the difference less than 3, return round grade up to the next multiple 5.
   if (rounded < 3) {
     return nextMultiple5;
   }
