@@ -39,9 +39,9 @@ const arr = [-4, 3, -9, 0, 4, 1];
 function plusMinus(arr) {
   //* initial variable.
   const arrLength = arr.length;
-  let totalPositive = 0,
-    totalNegative = 0,
-    totalZero = 0;
+  let sumOfPositive = 0,
+    sumOfNegative = 0,
+    sumOfZero = 0;
 
   //* logical business.
   for (let n = 0; n < arrLength; n++) {
@@ -57,23 +57,29 @@ function plusMinus(arr) {
     //* number negative,
     //* number zero.
     if (isZero) {
-      totalZero++;
+      sumOfZero++;
     } else if (isPositive) {
-      totalPositive++;
+      sumOfPositive++;
     } else if (isNegative) {
-      totalNegative++;
+      sumOfNegative++;
     }
   }
 
   //* calculate of proportion number zero, positive, and negative.
-  const proportionZero = totalZero / arrLength;
-  const proportionPositive = totalPositive / arrLength;
-  const proportionNegative = totalNegative / arrLength;
+  const proportionZero = proportionNumber(sumOfZero, arrLength);
+  const proportionPositive = proportionNumber(sumOfPositive, arrLength);
+  const proportionNegative = proportionNumber(sumOfNegative, arrLength);
 
   //* print all proportion number.
-  console.log(proportionPositive.toPrecision(6));
-  console.log(proportionNegative.toPrecision(6));
-  console.log(proportionZero.toPrecision(6));
+  console.log(proportionPositive);
+  console.log(proportionNegative);
+  console.log(proportionZero);
+}
+
+//* calculate proportion number and change to precision 6.
+function proportionNumber (sum, length) {
+  const proportion = sum / length;
+  return proportion.toPrecision(6);
 }
 
 //* expected result: P:0.500000, N:0.333333, Z:0.166667;

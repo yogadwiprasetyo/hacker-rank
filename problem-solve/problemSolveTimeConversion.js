@@ -48,7 +48,8 @@ function timeConversion(strtime) {
   } else if (isMorning && isTwelve) {
     convertHour = hoursConversion(hour);
   } else {
-    return strtime.slice(0, 8);
+    const timeWithoutState = strtime.slice(0, 8);
+    return timeWithoutState;
   }
 
   //* the result time conversion 12 to 24 hours.

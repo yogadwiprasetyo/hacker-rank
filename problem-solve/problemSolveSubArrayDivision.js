@@ -61,10 +61,10 @@ function birthday(s, d, m) {
   for (let i = 0; i < s.length; i++) {
     //* divide bar chocolate using length m.
     let divideBarChoco = s.slice(i, lengthMonth);
-    let totalBarChoco = 0;
+    let sumOfBarChoco = 0;
 
     //* increment of month length to calculate chocolate bar.
-    lengthMonth += 1;
+    lengthMonth++;
 
     //* if the dividing bar chocolate length not the same with m,
     //* break the loop.
@@ -76,12 +76,12 @@ function birthday(s, d, m) {
     //* calculate the value in dividing bar chocolate,
     //* to make sure the result is the same with d or not.
     for (let j = 0; j < divideBarChoco.length; j++) {
-      totalBarChoco += divideBarChoco[j];
+      sumOfBarChoco += divideBarChoco[j];
     }
 
     //* if the result calculated from dividing bar chocolate
     //* is the same with d, increment sum of chocolate.
-    if (totalBarChoco === d) {
+    if (sumOfBarChoco === d) {
       sumOfChocolate++;
     }
   }

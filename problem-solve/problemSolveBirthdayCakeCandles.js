@@ -30,17 +30,17 @@ const candles = [4, 4, 1, 3];
  */
 function birthdayCakeCandles(candles) {
   //* initial variable.
-  let max = candles[0];
+  let candleTall = candles[0];
 
   //* find max value in array candles.
   for (let i = 0; i < candles.length; i++) {
-    if (max < candles[i]) {
-      max = candles[i];
+    if (candleTall < candles[i]) {
+      candleTall = candles[i];
     }
   }
 
   //* filter value max in array candles
-  const tallest = (candle) => candle === max;
+  const tallest = (candle) => candle === candleTall;
   const candleTallest = candles.filter(tallest);
 
   //* return the number of candles that are tallest

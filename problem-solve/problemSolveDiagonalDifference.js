@@ -34,22 +34,22 @@ const arr = [
  */
 function diagonalDifference(arr) {
   //* initial variable.
-  let totalLTR = 0;
-  let totalRTL = 0;
+  let sumOfDiagonalRight = 0;
+  let sumOfDiagonalLeft = 0;
   let reverse = arr.length;
   const arrLength = arr.length;
 
   //* logical business.
   for (let i = 0; i < arrLength; i++) {
-    let rightDiagonal = arr[i][i];
-    let leftDiagonal = arr[(reverse -= 1)][i];
+    let diagonalRight = arr[i][i];
+    let diagonalLeft = arr[(--reverse)][i];
 
-    totalLTR += rightDiagonal;
-    totalRTL += leftDiagonal;
+    sumOfDiagonalRight += diagonalRight;
+    sumOfDiagonalLeft += diagonalLeft;
   }
 
   //* return difference diagonal left and right.
-  return Math.abs(totalRTL - totalLTR);
+  return Math.abs(sumOfDiagonalLeft - sumOfDiagonalRight);
 }
 
 //* expected result: 15

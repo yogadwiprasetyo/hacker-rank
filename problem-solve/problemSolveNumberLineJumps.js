@@ -32,7 +32,6 @@ Note: The two kangaroos must land at the same location after making the same num
 
 */
 
-// TODO : REFACTOR CODE THIS PROBLEM SOLVE
 //* SOLVING PROBLEM
 
 //* sample input.
@@ -51,10 +50,10 @@ function kangaroo(x1, v1, x2, v2) {
   //* start point kangaroo 1 and 2.
   let startK1 = x1;
   let startK2 = x2;
+  const limit = 10000;
 
-  // TODO: REFACTOR
   //* checking is start point kangaroo is same or not.
-  for (let i = 0; i < 10000; i++) {
+  for (let i = 0; i < limit; i++) {
     //* calculate start point with distance jump.
     startK1 += v1;
     startK2 += v2;

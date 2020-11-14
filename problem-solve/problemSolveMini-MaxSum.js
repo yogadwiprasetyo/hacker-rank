@@ -38,7 +38,7 @@ function miniMaxSum(arr) {
 
   //* logical business.
   for (let i = 0; i < arrLength; i++) {
-    let total = 0;
+    let sumAllValue = 0;
 
     for (let j = 0; j < arrLength; j++) {
       //* exception number index of array.
@@ -47,28 +47,36 @@ function miniMaxSum(arr) {
       }
 
       //* calculate value of array except number now.
-      total += arr[j];
+      sumAllValue += arr[j];
     }
 
     //* push the result from array.
-    arrSum.push(total);
+    arrSum.push(sumAllValue);
   }
 
-  //* initial variable max and min sum.
-  let minSum = arrSum[0],
-    maxSum = arrSum[0];
-
-  //* find a min and max sum.
-  for (let k = 0; k < arrSum.length; k++) {
-    if (maxSum < arrSum[k]) {
-      maxSum = arrSum[k];
-    } else if (minSum > arrSum[k]) {
-      minSum = arrSum[k];
-    }
-  }
+  //* min and max value in array sum.
+  const [minSum, maxSum] = minAndMaxArray(arrSum);
 
   //* print minSummary and maxSummary.
   console.log(minSum, maxSum);
+}
+
+//* find a min and max value in array.
+function minAndMaxArray(arr) {
+  //* initial variable max and min sum.
+  let min = arr[0],
+    max = arr[0];
+
+  //* find a min and max sum.
+  for (let k = 0; k < arr.length; k++) {
+    if (max < arr[k]) {
+      max = arr[k];
+    } else if (min > arr[k]) {
+      min = arr[k];
+    }
+  }
+
+  return [min, max];
 }
 
 //* expected result: Min:16, Max:24

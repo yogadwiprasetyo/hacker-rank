@@ -31,11 +31,9 @@ function compareTriplets(a, b) {
   //* logical business.
   for (let i = 0; i < a.length; i++) {
     if (a[i] > b[i]) {
-      totalPointA += 1;
+      totalPointA++;
     } else if (a[i] < b[i]) {
-      totalPointB += 1;
-    } else {
-      console.log("neither person receives a point.");
+      totalPointB++;
     }
   }
 

@@ -61,35 +61,35 @@ const oranges = [3, -2, -4];
 //* Complete the countApplesAndOranges function below.
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
   //* calculate distance fruits from trees.
-  const listDistanceApples = calculateDistanceFruits(apples, a);
-  const listDistanceOranges = calculateDistanceFruits(oranges, b);
+  const distanceApplesFromTree = calculateDistanceFromTree(apples, a);
+  const distanceOrangesFromTree = calculateDistanceFromTree(oranges, b);
 
   //* function for filter values fruits distance in location home or not.
-  const inLocationHome = (fruitsDistance) =>
-    fruitsDistance >= s && fruitsDistance <= t;
+  const inLocationHome = (distanceFruit) =>
+    distanceFruit >= s && distanceFruit <= t;
 
   //* performs a filter using the had created function.
-  const sumOfApples = listDistanceApples.filter(inLocationHome);
-  const sumOfOranges = listDistanceOranges.filter(inLocationHome);
+  const sumOfApplesInHome = distanceApplesFromTree.filter(inLocationHome);
+  const sumOfOrangesInHome = distanceOrangesFromTree.filter(inLocationHome);
 
   //* print the number of apples and oranges that fall on location house.
-  console.log(sumOfApples.length);
-  console.log(sumOfOranges.length);
+  console.log(sumOfApplesInHome.length);
+  console.log(sumOfOrangesInHome.length);
 }
 
 //* calculate values distance fruit from trees point.
-function calculateDistanceFruits(arrFruits, pointTrees) {
+function calculateDistanceFromTree(arrFruits, pointTrees) {
   //* initial variable for the result distance.
-  const listDistanceFruit = [];
+  const distanceFromTree = [];
 
   //* calculate distance fruits with trees point.
   for (let i = 0; i < arrFruits.length; i++) {
     let distanceFruit = pointTrees + arrFruits[i];
-    listDistanceFruit.push(distanceFruit);
+    distanceFromTree.push(distanceFruit);
   }
 
   //* return the result from calculating distance fruits with trees point.
-  return listDistanceFruit;
+  return distanceFromTree;
 }
 
 //* expected result: A: 1, O: 2
