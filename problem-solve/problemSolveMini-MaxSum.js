@@ -54,9 +54,6 @@ function miniMaxSum(arr) {
     arrSum.push(total);
   }
 
-  //*? DEBUGGING
-  console.log("arr sum:", arrSum);
-
   //* initial variable max and min sum.
   let minSum = arrSum[0],
     maxSum = arrSum[0];
