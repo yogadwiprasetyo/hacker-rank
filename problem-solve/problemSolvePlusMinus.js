@@ -45,11 +45,9 @@ function plusMinus(arr) {
 
   //* logical business.
   for (let n = 0; n < arrLength; n++) {
-    //* determine the number is zero.
+    //* determine the number is zero or positive or negative.
     let isZero = arr[n] === 0;
-    //* determine the number is positive.
     let isPositive = arr[n] > 0;
-    //* determine the number is negative.
     let isNegative = arr[n] < 0;
 
     //* increment total

@@ -47,19 +47,18 @@ function gradingStudents(grades) {
       continue;
     }
 
-    //* change type grade to string and check is grade have two digits.
+    //* check is grade have two digits and initial last number grade.
     const isTwoDigits = grades[i] >= 10;
-    let gradeString = grades[i].toString();
+    let lastNumberGrade = grades[i];
 
-    //* if grade have two digits, get last number grade.
+    //* if grade have two digits, get last number.
     if (isTwoDigits) {
-      gradeString = gradeString[1];
+      let gradeString = grades[i].toString();
+      lastNumberGrade = parseInt(gradeString[1]);
     }
 
-    //* change type grade, back to number.
     //* check is last number grade is less than or equals four.
     //* check is last number grade is more than four.
-    const lastNumberGrade = parseInt(gradeString);
     const isLessOrEqualsFour = lastNumberGrade <= 4;
     const isMoreThanFour = lastNumberGrade > 4;
     let multipleToFive = 0;

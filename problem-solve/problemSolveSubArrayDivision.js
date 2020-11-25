@@ -48,8 +48,8 @@ function birthday(s, d, m) {
   let sumOfChocolate = 0;
   let lengthMonth = m;
 
-  //* is a chocolate bar length less than one.
-  //* is value chocolate bar the same with d.
+  //* is a chocolate bar length less than one,
+  //* and then the value chocolate bar is same with d.
   const isLessThanOne = s.length === 1;
   const isChocoBarSame = s[0] === d;
 
@@ -68,8 +68,8 @@ function birthday(s, d, m) {
 
     //* if the dividing bar chocolate length not the same with m,
     //* break the loop.
-    const isLastNumber = divideBarChoco.length !== m;
-    if (isLastNumber) {
+    const isLengthNotSame = divideBarChoco.length !== m;
+    if (isLengthNotSame) {
       break;
     }
 

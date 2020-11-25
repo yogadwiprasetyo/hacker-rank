@@ -1,11 +1,16 @@
 /*
 
 //* PROBLEM
-You have been asked to help study the population of birds migrating across the continent. Each type of bird you are interested in will be identified by an integer value. Each time a particular kind of bird is spotted, its id number will be added to your array of sightings. You would like to be able to find out which type of bird is most common given a list of sightings. Your task is to print the type number of that bird and if two or more types of birds are equally common, choose the type with the smallest ID number.
+You have been asked to help study the population of birds migrating across the continent. 
+Each type of bird you are interested in will be identified by an integer value. 
+Each time a particular kind of bird is spotted, its id number will be added to your array of sightings. 
+You would like to be able to find out which type of bird is most common given a list of sightings. 
+Your task is to print the type number of that bird and if two or more types of birds are equally common, choose the type with the smallest ID number.
 
 //* Function Description
 
-Complete the migratoryBirds function in the editor below. It should return the lowest type number of the most frequently sighted bird.
+Complete the migratoryBirds function in the editor below. 
+It should return the lowest type number of the most frequently sighted bird.
 
 migratoryBirds has the following parameter(s):
 
@@ -18,7 +23,8 @@ The second line describes arr as n space-separated integers representing the typ
 
 //* Output Format
 
-Print the type number of the most common bird; if two or more types of birds are equally common, choose the type with the smallest ID number.
+Print the type number of the most common bird; 
+if two or more types of birds are equally common, choose the type with the smallest ID number.
 
 */
 
@@ -32,9 +38,12 @@ function calculateFreqType(arr) {
   // list of frequency every type birds.
   const freqType = [];
 
+  // type birds from 1 - 5
+  const allType = 5;
+
   // Filter every type birds from 1 - 5,
   // then calculate length or frequency from type birds.
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= allType; i++) {
     const typeBirds = arr.filter((type) => type === i);
     freqType.push(typeBirds.length);
   }
