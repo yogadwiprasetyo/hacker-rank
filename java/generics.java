@@ -8,6 +8,8 @@ Let's say you have an integer array and a string array. You have to write a sing
 
 */
 
+package hackerRank.java;
+
 import java.io.IOException;
 import java.lang.reflect.Method;
 
